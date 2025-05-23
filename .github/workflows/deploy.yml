@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  content: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,5 +28,5 @@ jobs:
       - name: Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.DEVOPS_PROJECT_DEPLOY }}
           publish_dir: ./dist
